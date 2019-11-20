@@ -88,8 +88,11 @@ def handleCommands(**payload):
     parseListCommands(data)    
     parseSendCommands(data)
 
-
+def get_slack_token(file_path):
+  with open(file_path) as token_file :
+    return token_file.readline()
+  return None
 
 if __name__ == "__main__":
-  client = slack.RTMClient(token=os.environ["SLACK_TOKEN"])
+  client = slack.RTMClient(token=get_slack_token("slack_token.dat"))
   client.start()
