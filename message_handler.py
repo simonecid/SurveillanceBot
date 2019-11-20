@@ -85,7 +85,7 @@ def handleCommands(**payload):
   data = payload["data"]
   if data.get("user") == "UQMNRUT88":
     parseMotionCommands(data)
-    parseListCommands(data)    
+    parseListCommands(data)
     parseSendCommands(data)
 
 def get_slack_token(file_path):
